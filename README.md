@@ -1,5 +1,3 @@
-<img src="login.png" align="middle" />
-
 # Node Authentication App
 
 > Membangun Register dan Login Authentication App berbasis NodeJS
@@ -16,10 +14,6 @@ Aplikasi ini menggunakan beberapa dependencies diantaranya:
 - mongoose
 - passport
 - passport-local
-
-## Demo
-
-Demo aplikasi dapat diakses dengan link berikut: [Node Auth](https://rifandani-node-auth.now.sh/)
 
 ### Usage
 

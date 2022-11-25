@@ -1,5 +1,3 @@
-<img src="login.png" align="middle" />
-
 # Node Authentication App
 
 > Membangun Register dan Login Authentication App berbasis NodeJS

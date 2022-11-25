@@ -19,4 +19,11 @@ router.get('/Add', ensureAuthenticated, (req, res) =>
   }),
 );
 
+// Edit
+router.get('/Edit', ensureAuthenticated, (req, res) =>
+  res.render('Edit', {
+    user: req.user,
+  }),
+);
+
 module.exports = router;

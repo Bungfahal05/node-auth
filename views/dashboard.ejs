@@ -19,19 +19,8 @@
             <td><%= user.email %></td>
             <td>
               <a href="#" class="btn btn-primary">Edit</a>
-              <a action="/users/delete/{{ <%= user._id %> }}">Delete</a>
+              <a class="btn btn-danger" href="/users/delete/{{ <%= user._id %> }}?_method=DELETE">Delete</a>
             </td>
-          </tr>
-          <tr>
-            <th scope="row">2</th>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
-          </tr>
-          <tr>
-            <th scope="row">3</th>
-            <td colspan="2">Larry the Bird</td>
-            <td>@twitter</td>
           </tr>
         </tbody>
       </table>

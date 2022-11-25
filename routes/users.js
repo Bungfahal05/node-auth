@@ -5,7 +5,6 @@ const passport = require('passport');
 // Load User model
 const User = require('../models/User');
 const { forwardAuthenticated } = require('../config/auth');
-const Scrapping = require('../models/scrapping');
 
 // Login Page
 router.get('/login', forwardAuthenticated, (req, res) => res.render('login'));
@@ -88,15 +87,6 @@ router.post('/login', (req, res, next) => {
   })(req, res, next);
 });
 
-// Login
-router.post('/add', (req, res, next) => {
-  passport.authenticate('local', {
-    successRedirect: '/add',
-    failureRedirect: '/users/login',
-    failureFlash: true,
-  })(req, res, next);
-});
-
 // Logout
 router.get('/logout', (req, res) => {
   req.logout();
@@ -117,23 +107,5 @@ router.delete('/delete/:id', async (req, res) => {
     console.log(err);
   }
 });
-
-//Add
-router.post('/add', async(req, res) => {
-  try {
-    const { judul, calories, fat, carbs, protein} = req.body;
-    await Scrapping.create({ judul, calories, fat, carbs, protein });
-    req.flash("alertMessage", "Success add data Mahasiswa");
-    req.flash("alertStatus", "success");
-    res.redirect("/dashboard");
-  } catch (error) {
-    
-      // ketika create data error memberikan notifikasi
-      req.flash("alertMessage", `${error.message}`);
-      req.flash("alertStatus", "danger");
-      // ketika inputan kosong, maka redirect kehalaman
-      res.redirect("/dashboard");
-  }
-} )
 
 module.exports = router;

@@ -15,10 +15,6 @@ Aplikasi ini menggunakan beberapa dependencies diantaranya:
 - passport
 - passport-local
 
-## Demo
-
-Demo aplikasi dapat diakses dengan link berikut: [Node Auth](https://rifandani-node-auth.now.sh/)
-
 ### Usage
 
 ```sh
